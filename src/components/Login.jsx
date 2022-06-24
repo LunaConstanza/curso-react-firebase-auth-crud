@@ -123,7 +123,10 @@ const Login = () => {
                         onChange={e => setPass(e.target.value)}
                         value={pass}
                     />
-                    <button type='submit' className="btn btn-dark btn-lg mb-2">
+                    <button
+                        type='submit'
+                        className="btn btn-dark btn-lg mb-2"
+                    >
                         {
                             esRegistro ? 'Registrate' : 'Acceder'
                         }
@@ -137,6 +140,17 @@ const Login = () => {
                             esRegistro ? '¿Ya estas registrado?' : '¿No tienes cuenta?'
                         }
                     </button>
+                    {
+                        !esRegistro ? (
+                            <button
+                                type='nutton'
+                                className="btn btn-danger btn-sm mt-2"
+                                onClick={() => params('/reset')}
+                            >
+                                Recuperar contraseña
+                            </button>
+                        ) : null
+                    }
                 </form>
             </div>
         </div>
